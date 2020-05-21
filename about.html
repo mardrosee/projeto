@@ -1,0 +1,43 @@
+---
+layout: default
+title: About
+permalink: /about
+---
+<!-- Intro -->
+<picture>
+    <img src="assets/img/marian.png" alt= "image of Marian Pedrosa">
+</picture>
+<!-- Intro -->
+<div>
+    <p>Born and raised in Figueira da Foz, from a family that is both portuguese and german, I was born in 1994.</p>
+
+    <p>I've volunteered with ADRA Portugal since 2010, gathering and distributing essential goods that are then given to low income families.</p>
+
+    <p>Been part of a Scouts group since I was little, Pathfinders, participating, monitoring and leading its activities and camp events.</p>
+
+    <p>Aside from work I do some designing for the Pathfinders, my local church and for an independent music project called Songs4Him.</p>
+</div>
+
+<!-- Skills-->
+
+<section>      
+    <h2>Skills</h2>
+        {% for skill in site.data.skills.docs %}
+            <h3>{{skill.skill}}</h3>
+                <p>{{skill.description}}</p>
+        {% endfor %}
+
+</section>
+
+<!-- EDUCATION -->
+
+<section>
+    <h2>Education</h2>
+        {% for degree in site.data.education.docs %}
+        <h3>{{degree.degree}}</h3>
+        <h4>{{degree.course}}</h4>
+        <h5>{{degree.institution}}</h5>
+        <i>{{degree.date}}</i>
+        <p>{{degree.description}}</p>
+        {% endfor %}
+</section>

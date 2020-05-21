@@ -1,11 +1,11 @@
 docs_list_title:
 docs:
 
-- title: Biography
-  url: biography.html
+- title: About
+  url: about.html
 
-- title: Portfolio
-  url: portfolio.html
+- title: Work
+  url: work.html
 
 - title: Contact
   url: contact.html

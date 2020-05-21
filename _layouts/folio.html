@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<nav>
+    <ul>
+        {% for ddesign in site.work %}
+
+        <li>
+            <a href="{{ site.baseurl }}/work/{{ ddesign.slug }}/" class="{%if page.url contains ddesign.slug %}current{% endif %}">{{ddesign.title}}</a>
+
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+{{ content }}
