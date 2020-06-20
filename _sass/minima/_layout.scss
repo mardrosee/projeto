@@ -40,7 +40,7 @@
 
 #menuToggle a{
   text-decoration: underline;
-  color: #232323;  
+  color: $text-color;  
   transition: color 0.3s ease;
 }
 
@@ -115,7 +115,7 @@
   margin: -100px 0 0 -200px;
   padding: 50px;
   padding-top: 125px;
-  background: $grey-color-light;
+  background: $accent-color;
   box-shadow: 0 0 12px rgba(0,0,0,.25);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -269,10 +269,23 @@ padding: 0 15px;
  */
 
  .biography .container {
-  margin-bottom: 30vh;
+  margin: 15vh 0;
 }
 
 .imagewrapper{
-  max-height: 30px;
-  margin: auto;
+  width: auto;
+  margin-bottom: 10px;
+
+}
+
+.skills {
+  background:$text-color;
+  padding: 15vh 0;
+  max-width: 100%;
+  color: $text-color-w;
+}
+
+
+.education {
+  margin: 15vh 0;
 }
