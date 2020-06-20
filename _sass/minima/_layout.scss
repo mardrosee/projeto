@@ -1,255 +1,278 @@
 /**
  * Site header
  */
-.site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
 
-  // Positioning context for the mobile navigation icon
-  position: relative;
+ .main-header {
+  padding: 15px;
+  //margin-bottom: 15px;
+  background-color: $text-color-w;
+}
+
+.header-container {
+  max-width: 90%;
+  margin: auto;
 }
 
 .site-title {
   @include relative-font-size(1.625);
-  font-weight: 300;
+  font-weight: 400;
   line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
-
-  &,
-  &:visited {
-    color: $grey-color-dark;
-  }
+  display: inline-block;
+  color: $text-color;
 }
 
-.site-nav {
+/* Menu - Navegação */
+
+.navigation-wrapper {
+  display: inline-block;
   float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
-
-  .nav-trigger {
-      display: none;
-  }
-
-  .menu-icon {
-    display: none;
-  }
-
-  .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
-
-    label[for="nav-trigger"] {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 36px;
-      z-index: 2;
-      cursor: pointer;
-    }
-
-    .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-
-      > svg {
-        fill: $grey-color-dark;
-      }
-    }
-
-    input ~ .trigger {
-      clear: both;
-      display: none;
-    }
-
-    input:checked ~ .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
-
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
-    }
-  }
+  padding: 18px 18px ;
 }
 
-
-
-/**
- * Site footer
- */
-.site-footer {
-  border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
-}
-
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
-  color: $grey-color;
-  margin-left: -$spacing-unit / 2;
-  @extend %clearfix;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-
-
-/**
- * Page content
- */
-.page-content {
-  padding: $spacing-unit 0;
-  flex: 1;
-}
-
-.page-heading {
-  @include relative-font-size(2);
-}
-
-.post-list-heading {
-  @include relative-font-size(1.75);
-}
-
-.post-list {
-  margin-left: 0;
-  list-style: none;
-
-  > li {
-    margin-bottom: $spacing-unit;
-  }
-}
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-link {
+#menuToggle {
   display: block;
-  @include relative-font-size(1.5);
+  position: fixed;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
 }
+
+#menuToggle a{
+  text-decoration: underline;
+  color: #232323;  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover{
+  text-decoration: underline;
+  color: $text-color;
+}
+
+#menuToggle input{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/** Just a quick hamburger */
+
+#menuToggle span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: $text-color;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: $text-color;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2){
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu{
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  margin: -100px 0 0 -200px;
+  padding: 50px;
+  padding-top: 125px;
+  background: $grey-color-light;
+  box-shadow: 0 0 12px rgba(0,0,0,.25);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  display: none;
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+  display: block;
+}
+
 
 
 
 /**
- * Posts
+ * Footer
  */
-.post-header {
-  margin-bottom: $spacing-unit;
+
+
+@media (min-width: 768px){
+  .social-media-list{
+  display: flex;
+  justify-content: space-start;
+  }
+
+.social-media-list li {
+  padding-right: 30px;
 }
 
-.post-title {
-  @include relative-font-size(2.625);
-  letter-spacing: -1px;
-  line-height: 1;
-
-  @include media-query($on-laptop) {
-    @include relative-font-size(2.25);
-  }
+.social-wrapper{
+  align-content: left;
+}
 }
 
-.post-content {
-  margin-bottom: $spacing-unit;
 
-  h2 {
-    @include relative-font-size(2);
 
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.75);
+
+/**
+ * Estrutura
+ */
+
+.container {
+	width: 100%;
+	position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+
+    &:after, 
+    .clearfix:after {
+      display: block;
+      content: "";
+      clear: both;}
+}
+
+.column {
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+  float: left;
+}
+
+.column-inner{
+padding: 0 15px;
+}
+
+.page-content {
+  min-height: calc(100vh - 600px);
+}
+
+.page-content {
+  min-height: calc(100vh - 300px);
+}
+
+@media (min-width: 768px){
+.container {
+  width: 750px;
+}
+
+.column-1{
+  width: 16%;
+}
+
+.column-2{
+  width: 33%;
+}
+
+.column-3{
+  width: 50%;
+}
+
+.column-4{
+  width: 66%;
+}
+
+.column-5{
+  width: 83%;
+}
+
+.column-6{
+  width: 100%;
+}
+
+}
+
+@media (min-width: 992px){
+.container {
+  width: 970px;
+}
+}
+
+@media (min-width: 1200px){
+.fw-container {
+  width: 1170px;
+}
+
+.page-content {
+  min-height: calc(100vh - 600px);
+}
+}
+
+//home//
+
+.home {
+      background-image: url('./img/palmeira.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;  
+      background-size: cover;
+      min-height: calc(100vh - 300px);
+    
     }
-  }
 
-  h3 {
-    @include relative-font-size(1.625);
 
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.375);
-    }
-  }
+  /**
+ * About
+ */
 
-  h4 {
-    @include relative-font-size(1.25);
+ .biography .container {
+  margin-bottom: 30vh;
+}
 
-    @include media-query($on-laptop) {
-      @include relative-font-size(1.125);
-    }
-  }
+.imagewrapper{
+  max-height: 30px;
+  margin: auto;
 }

@@ -1,29 +1,20 @@
 <header>
-<div class="main-header">
-  <div class="header-container">
+
+  <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
     {%- if page_paths -%}
-    <div class="navigation-wrapper">
-      <nav role="navigation">
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            {% for item in site.data.samplelist.docs %}
-            <li><a href="{{site.baseurl}}/{{ item.url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </nav>
-     </div>
-  </div>
+      <nav class="site-nav">
+        <!--<h2>{{ site.data.samplelist.docs_list_title }}</h2>-->
+<ul>
+   {% for item in site.data.samplelist.docs %}
+      <li><a href="{{site.baseurl}}/{{ item.url }}">{{ item.title }}</a></li>
+   {% endfor %}
+</ul>
 
-        <!-- <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+       <!-- <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
         </label>
 
@@ -35,8 +26,8 @@
             {%- endif -%}
           {%- endfor -%}
         </div>-->
-
-    </nav>
+        
+      </nav>
     {%- endif -%}
-</div>
+  </div>
 </header>

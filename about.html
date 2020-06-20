@@ -4,28 +4,55 @@ title: About
 permalink: /about
 ---
 <!-- Intro -->
-<picture>
-    <img src="assets/img/marian.png" alt= "image of Marian Pedrosa">
-</picture>
-<!-- Intro -->
-<div>
-    <p>Born and raised in Figueira da Foz, from a family that is both portuguese and german, I was born in 1994.</p>
-
-    <p>I've volunteered with ADRA Portugal since 2010, gathering and distributing essential goods that are then given to low income families.</p>
-
-    <p>Been part of a Scouts group since I was little, Pathfinders, participating, monitoring and leading its activities and camp events.</p>
-
-    <p>Aside from work I do some designing for the Pathfinders, my local church and for an independent music project called Songs4Him.</p>
-</div>
+<section id="biography-01" class="biography">
+    <div class="container">
+        <div class="column column-2">
+            <div class="column-inner">
+                <div class="imagewrapper">
+                    <img src="assets/img/marian.png" alt="image of Marian Pedrosa">
+                </div>
+            </div>
+        </div>
+        <div class="column column-4">
+            <div class="column-inner">
+                <div class="tituloseccao">
+                    <h2>Biography</h2>
+                </div>
+                <div class="text-box">
+                    <p>Born and raised in Figueira da Foz, from a family that is both portuguese and german, I was born
+                        in 1994.</p><br>
+                    <p>I've volunteered with ADRA Portugal since 2010, gathering and distributing essential goods that
+                        are then given to low income families.</p><br>
+                    <p>Been part of a Scouts group since I was little, Pathfinders, participating, monitoring and
+                        leading its activities and camp events.</p><br>
+                    <p>Aside from work I do some designing for the Pathfinders, my local church and for an independent
+                        music project called Songs4Him.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Skills-->
 
-<section>      
-    <h2>Skills</h2>
-        {% for skill in site.data.skills.docs %}
-            <h3>{{skill.skill}}</h3>
-                <p>{{skill.description}}</p>
-        {% endfor %}
+<section>
+    <div class="container">
+        <div class="column column-1">
+            <div class="column-inner">
+                <h2>Skills</h2>
+            </div>
+        </div>
+        <div class="column column-2">
+            <div class="column-inner">
+                <div class="text-box">
+                    {% for skill in site.data.skills.docs %}
+                    <h3>{{skill.skill}}</h3>
+                    <p>{{skill.description}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 
@@ -33,11 +60,11 @@ permalink: /about
 
 <section>
     <h2>Education</h2>
-        {% for degree in site.data.education.docs %}
-        <h3>{{degree.degree}}</h3>
-        <h4>{{degree.course}}</h4>
-        <h5>{{degree.institution}}</h5>
-        <i>{{degree.date}}</i>
-        <p>{{degree.description}}</p>
-        {% endfor %}
+    {% for degree in site.data.education.docs %}
+    <h3>{{degree.degree}}</h3>
+    <h4>{{degree.course}}</h4>
+    <h5>{{degree.institution}}</h5>
+    <i>{{degree.date}}</i>
+    <p>{{degree.description}}</p>
+    {% endfor %}
 </section>
