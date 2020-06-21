@@ -2,17 +2,36 @@
 layout: default
 ---
 
+<section id="workdetail-01" class="workdetail">
+    <div class="container">
+        <div class="column column-6">
+            <div class="column-inner">
+                <h2> {{page.title}} </h2>
+            </div>
+        </div>
+        <div class="column column-6">
+            <div class="column column-3">
+                <div class="column-inner">
+                    <div class="text-box">
+                        <i> {{page.year}}, {{page.where}}</i>
+                        <p> {{page.intro}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        {{ content }}
 
-<section>
-    <div>
-        <h2> {{page.title}} </h2>
-            <i> {{page.year}}, {{page.where}}</i>
-            <p> {{page.intro}}</p>
+        <div class="column column-6">
+            <div class="column column-4">
+                <div class="column-inner">
+                    <div class="text-box">
+                        <p> {{page.description}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    {{ content }}
 
-    <div>
-        <p> {{page.description}} </p>
-    </div>
 </section>

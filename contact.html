@@ -3,10 +3,23 @@ layout: page
 title: Contact
 permalink: /contact
 ---
-<div src="contact">
-<p>I can be found in Lisbon or Figueira da Foz.</p>
-<p>But I can go anywhere, really.</p>
-</div>
-{%- if site.email -%}
-<a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-{%- endif -%}
+<section id="contact-1" class="contact">
+    <div class="column column-6">
+        <div class="column-inner">
+            <div class="text-box">
+                <p>I can be found in Lisbon or Figueira da Foz.</p>
+                <p>But I can go anywhere, really.</p>
+            </div>
+        </div>
+    </div>
+    <div class="column column-6">
+        <div class="column-inner">
+            <div class="text-box">
+                {%- if site.email -%}
+                <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+                {%- endif -%}
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -13,7 +13,7 @@
 
 }
 
-img{
+img, iframe{
 	max-width: 100%
 }
  
@@ -77,11 +77,15 @@ a {
     text-decoration: underline;
   }
 
-  .social-media-list 
-  &:hover {
-    text-decoration: underline;
+  //.social-media-list 
+  //&:hover {
+    //text-decoration: underline;
+  //}
 
+  &.u-email{
+    color: $accent-color;
   }
+
 }
 
 
