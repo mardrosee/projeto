@@ -1,0 +1,25 @@
+<section id="work-menu-1" class="work-menu">
+    <div class="container">
+        
+        <nav>
+            <ul>
+                {% for ddesign in site.work %}
+                <div class="column column-2">
+                    <div class="column-inner">
+                        <div class="text-box">
+
+                            <li>
+                                <a href="{{ site.baseurl }}/work/{{ ddesign.slug }}/"
+                                    class="{%if page.url contains ddesign.slug %}current{% endif %}">{{ddesign.title}}</a>
+
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
+
+</section>

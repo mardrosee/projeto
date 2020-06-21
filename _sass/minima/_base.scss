@@ -72,19 +72,18 @@ a {
   color: $text-color-w;
   text-decoration: underline;
 
-  &:hover {
-    color: $text-color-w;
-    text-decoration: underline;
-  }
 
+  &:hover{
+    color: $accent-color;
+    }
+    
+.u-email{
+      color: $accent-color;
+    }
   //.social-media-list 
   //&:hover {
     //text-decoration: underline;
   //}
-
-  &.u-email{
-    color: $accent-color;
-  }
 
 }
 

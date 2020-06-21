@@ -20,6 +20,16 @@
   margin-bottom: 0;
   display: inline-block;
   color: $text-color;
+
+    animation-name: flicker-color;
+    animation-duration: 10s;
+    animation-iteration-count: 300;
+}
+
+@keyframes flicker-color {
+  0%   {color: $accent-color;}
+  50% {color: $text-color;}
+  100% {color:$accent-color;}
 }
 
 /* Menu - Navegação */
@@ -167,7 +177,6 @@
 
 
 
-
 /**
  * Estrutura
  */
@@ -259,16 +268,13 @@ padding: 0 15px;
       background-repeat: no-repeat;
       background-attachment: fixed;  
       background-size: cover;
-      min-height: calc(100vh - 300px);
+      min-height: calc(100vh - 277px);
     
     }
 
 
-  /**
- * About
- */
 
- .biography, .education, .workdetail, .contact {
+ .biography, .education, .workdetail, .contact , .work-menu{
   margin: 15vh 0;
 }
 
@@ -283,4 +289,13 @@ padding: 0 15px;
   padding: 15vh 0;
   max-width: 100%;
   color: $text-color-w;
+}
+
+.text-box a{
+  color:$text-color;
+  font-size: 20px;
+}
+
+.quickfixfooter{
+  min-height: 36vh;
 }
